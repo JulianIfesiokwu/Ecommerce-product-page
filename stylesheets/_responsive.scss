@@ -1,0 +1,115 @@
+@include media-lg {
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .header {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $grayishBlue;
+        .hamburger-container {
+            display: none;
+        }
+
+        .logo-container {
+            margin-right: 2rem;
+        }
+    
+        .navigation {
+            display: flex;
+        }
+
+        .close-navigation-container {
+            display: none;
+        }
+    
+        .navigation__list {
+            display: flex;
+            color: $darkGrayishBlue;
+        }
+
+        .navigation__link {
+            margin-right: 1.5rem;
+            font-size: 0.8rem;
+            padding-top: 0.2rem;
+        }
+
+    }
+    
+    .main {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem 2rem;
+
+        .product__image {
+            width: 35%;
+            
+            .large__display img{
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .thumbnails {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                margin-top: 0.5rem;
+
+                .image {
+                    width: 22%;
+                    
+                    img{
+                        width: 100%;
+                        border-radius: 10px;
+                        object-fit: contain;
+                    }
+
+                }
+
+            }
+        }
+
+        .product__description {
+            width: 55%;
+
+            .price-details {
+                display: inline;
+            }
+
+            .model__price {
+                display: inline-block;
+            }
+
+            .discount-percent {
+                display: inline-block;
+            }
+
+            .actual__price {
+                display: block;
+                position: initial;
+            }
+
+            .purchase {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2%;
+
+                .button-trio {
+                    width: 50%;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+    }
+
+
+}
