@@ -3,42 +3,66 @@
     .container {
         width: 80%;
         margin: 0 auto;
-    }
 
-    .header {
-        margin-bottom: 1rem;
-        border-bottom: 1px solid $grayishBlue;
-        .hamburger-container {
-            display: none;
-        }
-
-        .logo-container {
-            margin-right: 2rem;
-        }
+        .header {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid $grayishBlue;
+            padding: 1rem 0 0 0;
+            .hamburger-container {
+                display: none;
+            }
     
-        .navigation {
-            display: flex;
-        }
-
-        .close-navigation-container {
-            display: none;
-        }
+            .logo-container {
+                margin-right: 2rem;
+            }
+        
+            .navigation {
+                display: flex;
+            }
     
-        .navigation__list {
-            display: flex;
-            color: $darkGrayishBlue;
+            .close-navigation-container {
+                display: none;
+            }
+        
+            .navigation__list {
+                display: flex;
+                color: $darkGrayishBlue;
+            }
+    
+            .navigation__link {
+                margin-right: 1.5rem;
+                font-size: 0.8rem;
+                padding-top: 0.2rem;
+            }
+    
+            .navigation__link:hover {
+                font-weight: 700;
+                cursor: pointer;
+                border-bottom: 3px solid $orange;
+            }
+    
+            .cart {
+                // cart hidden until clicked
+                display: none;
+                position: absolute;
+                right: 0;
+                background-color: white;
+                border-radius: 10px;
+                width: 30%;
+                height: 30vh;
+                top: 4rem;
+                z-index: 2;
+            }
+    
+            .cart__title {
+                font-size: 0.7rem;
+            }
+            
         }
-
-        .navigation__link {
-            margin-right: 1.5rem;
-            font-size: 0.8rem;
-            padding-top: 0.2rem;
-        }
-
     }
     
     .main {
-        width: 80%;
+        width: 70%;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
@@ -52,13 +76,13 @@
             .large__display img{
                 width: 100%;
                 border-radius: 10px;
+                cursor: pointer;
             }
 
             .thumbnails {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-
                 margin-top: 0.5rem;
 
                 .image {
@@ -70,9 +94,21 @@
                         object-fit: contain;
                     }
 
+                    img:hover {
+                        cursor: pointer;
+                        opacity: 0.6;
+                    }
+
+                }
+
+                .active {
+                    border: 2px solid $orange;
+                    opacity: 0.6;
                 }
 
             }
+
+
         }
 
         .product__description {

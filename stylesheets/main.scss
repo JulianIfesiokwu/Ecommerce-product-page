@@ -7,7 +7,10 @@
 
 .header {
     display: flex;
-    padding: 1rem 2rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0 0.5rem 0;
+    // padding: 1rem 2rem 0 2rem;
     position: relative;
 }
 
@@ -21,6 +24,7 @@
 
 .logo-container {
     margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
     svg {
         height: 20px;
     }
@@ -33,11 +37,12 @@
 .profile {
     display: flex;
     position: absolute;
-    right: 1rem;
+    right: 0;
 }
 
 .cart-container {
-    margin-right: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
 
     svg {
         width: 22px; 
@@ -45,12 +50,72 @@
     }
 }
 
+.cart {
+    // cart hidden until clicked
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 40vh;
+    top: 4rem;
+    z-index: 2;
+    box-shadow: 0 5px 8px #ccc;
+}
+
+.cart__heading {
+    border-bottom: 1px solid $grayishBlue;
+    padding: 0.5rem 1rem;
+}
+
+.cart-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-weight: 700;
+    height: 60%;
+    color: $darkGrayishBlue;
+}
+
+.checkout {
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.buy {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: $orange;
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.buy:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
 .profile-container {
     width: 100%;
     height: auto;
     img {
-        width: 25px;
+        width: 40px;
         height: auto;
+        border-radius: 50%;
+        border: 2px solid white;
+        vertical-align: middle;
+        margin-top: -0.5rem;
+    }
+    img:hover {
+        border: 2px solid $orange;
+        cursor: pointer;
     }
 }
 
@@ -146,7 +211,7 @@
 }
 
 .prev:hover, .next:hover {
-    color: $paleOrange;
+    opacity: 0.6;
 }
 
 .counter {
@@ -168,7 +233,7 @@
 
 .add-to-cart:hover {
     cursor: pointer;
-    background-color: $paleOrange;
+    opacity: 0.6;
 }
 
 .cart-image {
