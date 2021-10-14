@@ -10,6 +10,10 @@
 </head>
 <body>
 
+
+  <!-- Overlay for lightbox -->
+  <div class="overlay"></div>
+
   <div class="container">
     <!-- Header -->
     <header class="header">
@@ -40,6 +44,8 @@
         </div>
         <div class="cart-contents">
           <p class="cart-status">Your Cart is empty.</p>
+          <ul class="cart-list">
+          </ul>
         </div>
         <div class="checkout">
           <button class="buy">Checkout</button>
@@ -49,6 +55,7 @@
       <div class="profile">
         <div class="cart-container">
           <svg xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+          <p class="quantity-pill">0</p>
         </div>
 
         <div class="profile-container">
@@ -57,24 +64,65 @@
       </div>
     </header>
 
+    <!-- LightBox -->
+    <div class="lightbox">
+      <div class="product__image">
+        <div class="close-button">
+          <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#fff" fill-rule="evenodd"/></svg>
+        </div>
+        <div class="lightbox__display">
+          <img class="active" src="./images/image-product-1.jpg" alt="image-product-1">
+          <img class="hidden" src="./images/image-product-2.jpg" alt="image-product-2">
+          <img class="hidden" src="./images/image-product-3.jpg" alt="image-product-3">
+          <img class="hidden" src="./images/image-product-4.jpg" alt="image-product-4">
+          <!-- Lightbox buttons -->
+          <div class="before-btn">
+            <img class="lightbox__buttons before" src="./images/icon-previous.svg" alt="">
+          </div>
+          <div class="after-btn">
+            <img class="lightbox__buttons after" src="./images/icon-next.svg" alt="">
+          </div>
+        </div>
+
+        <div class="lightbox-thumbnails">
+          <div class="image active">
+            <img class="" src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
+          </div>
+          <div class="image">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail">
+          </div>
+          <div class="image">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail">
+          </div>
+          <div class="image">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- Main -->
     <main class="main">
       <div class="product__image">
         <div class="large__display">
-          <img src="./images/image-product-1.jpg" alt="image-product-1">
+          <img id="1" class="product-active large__display__img" src="./images/image-product-1.jpg" alt="image-product-1">
+          <img id="2" class="product-hidden large__display__img" src="./images/image-product-2.jpg" alt="image-product-2">
+          <img id="3" class="product-hidden large__display__img" src="./images/image-product-3.jpg" alt="image-product-3">
+          <img id="4" class="product-hidden large__display__img" src="./images/image-product-4.jpg" alt="image-product-4">
         </div>
         <div class="thumbnails">
-          <div class="thumbnails image">
-            <img class="active" src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
+          <div class="thumbnails image active">
+            <img id="1" class="" src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
           </div>
           <div class="thumbnails image">
-            <img src="./images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail">
+            <img id="2" src="./images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail">
           </div>
           <div class="thumbnails image">
-            <img src="./images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail">
+            <img id="3" src="./images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail">
           </div>
           <div class="thumbnails image">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail">
+            <img id="4" src="./images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail">
           </div>
         </div>
       </div>
@@ -112,6 +160,7 @@
 
       </div>
     </main>
+
   </div>
 
   <script src="./scripts/main.js"></script>
