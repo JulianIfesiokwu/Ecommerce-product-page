@@ -64,6 +64,16 @@
             
         }
     }
+
+    .lightbox {
+        position: absolute;
+        top: 5%;
+        left: 30%;
+        display: none;
+        width: 35%;
+        margin: 0 auto;
+        z-index: 9;
+    }
     
     .main {
         width: 70%;

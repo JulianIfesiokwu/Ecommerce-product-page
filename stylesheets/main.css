@@ -68,6 +68,15 @@
   .container .header .cart-list {
     margin-bottom: 1rem;
   }
+  .lightbox {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    display: none;
+    width: 35%;
+    margin: 0 auto;
+    z-index: 9;
+  }
   .main {
     width: 70%;
     margin: 0 auto;
@@ -278,16 +287,6 @@
   color: #68707d;
 }
 
-.lightbox {
-  position: absolute;
-  top: 5%;
-  left: 30%;
-  display: none;
-  width: 35%;
-  margin: 0 auto;
-  z-index: 9;
-}
-
 .close-button {
   width: 100%;
   text-align: end;
@@ -464,6 +463,10 @@
 }
 
 .thumbnails {
+  display: none;
+}
+
+.lightbox-thumbnails {
   display: none;
 }
 

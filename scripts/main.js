@@ -1,14 +1,14 @@
-const cart = document.querySelector('.cart-container');
-const thumbnailImages = document.querySelectorAll('.image');
-const addToCartBtn = document.querySelector('.add-to-cart');
+const cart = document.querySelector('.cart-container')
+const thumbnailImages = document.querySelectorAll('.image')
+const addToCartBtn = document.querySelector('.add-to-cart')
 const cartList = document.querySelector('.cart-list')
-const cartStatus = document.querySelector('.cart-status');
+const cartStatus = document.querySelector('.cart-status')
 const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 const itemQuantity = document.querySelector('.counter')
 const quantityPill = document.querySelector('.quantity-pill')
 // For lightbox
-const lightBoxButton = document.querySelector('.large__display');
+const lightBoxButton = document.querySelector('.large__display')
 const closeLightBoxBtn = document.querySelector('.close-button')
 
 // Show cart when clicked
@@ -28,11 +28,12 @@ function deleteItem(e) {
         cartStatus.style.display = 'none';
         itemToRemove.remove()
         decreaseQuantity()
+        itemQuantity.textContent = `0`
+        quantityPill.textContent = `0`
     } else {
-        cartStatus.style.display = 'initial';
+        cartStatus.style.display = 'block'
         itemToRemove.remove()
     }
-
 }
 
 // Get product info
@@ -40,37 +41,30 @@ function addProduct() {
     // Create product container
     const item = document.createElement('li')
     item.classList.add('item')
-
     // create product img tag
     const productImage = document.createElement('img');
     productImage.classList.add('product-image');
     productImage.setAttribute('src', `./images/image-product-1-thumbnail.jpg`);
     productImage.setAttribute('alt', `Fall Limited Edition Sneakers`)
-
     // Create container for product information
     const productDetails = document.createElement('div')
     productDetails.classList.add('product-details')
-
     // Create product name
     const productName = document.createElement('p')
     productName.classList.add('product-name')
     productName.textContent = `Fall Limited Edition Sneakers`
-
     // Create product amount details
     const productAmount = document.createElement('p')
     productAmount.classList.add('amount')
     productAmount.textContent = `$125.00 x`
-
     // create quantity details
     const quantity = document.createElement('span')
     quantity.classList.add('quantity')
-    quantity.textContent = 3
-
+    quantity.textContent = ` ${amountToPurchase}`
     // create quantity totals
     const totals = document.createElement('span')
     totals.classList.add('total')
-    totals.textContent = ` $375.00`
-
+    totals.textContent = ` $125.00`
     // append quantity and total to amount
     productAmount.append(quantity, totals)
     // append product name and product quantity to product details
@@ -91,11 +85,11 @@ function addProduct() {
 // Add item to cart
 function addItemToCart() {
     // Remove cart status if cart has a child    
-    if(cartList.hasChildNodes) {
-        cartStatus.style.display = 'none';
+    if(cartList.hasChildNodes) {        
         // add item
         // addProduct()
         increaseQuantity()
+        updateQuantityValue()
     } else {
         cartStatus.style.display = 'initial';
     }
@@ -109,7 +103,16 @@ function removeCartItem() {
 function increaseQuantity() {
     itemQuantity.textContent = +itemQuantity.textContent + 1
     quantityPill.textContent = +quantityPill.textContent + 1
-    addProduct()
+    if(cartList.childElementCount <1) {
+        cartStatus.style.display = 'none';
+        addProduct()
+    }
+    if(cartList.childElementCount >=1) {
+        cartStatus.style.display = 'none';
+        updateQuantityValue()
+    }
+
+    
 }
 
 function decreaseQuantity() {
@@ -126,7 +129,6 @@ function updateLargeImage(e) {
     let identifier = e.target.id
     const allLargeImages = document.querySelectorAll('.large__display__img')
     allLargeImages.forEach((largeImage) => {
-
         if( largeImage.id === identifier ) {
             largeImage.classList.replace('product-hidden','product-active')
         } 
